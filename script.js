@@ -1,5 +1,5 @@
 // URL base do backend
-const BACKEND_URL = "http://127.0.0.1:8000";
+const BACKEND_URL = "https://SEU_SERVICE.onrender.com";
 
 const emailText = document.getElementById("email-text");
 const analyzeTextBtn = document.getElementById("analyze-text-btn");
