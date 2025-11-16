@@ -1,5 +1,5 @@
 // URL base do backend
-const BACKEND_URL = "https://SEU_SERVICE.onrender.com";
+const BACKEND_URL = "https://email-classifier-backend-9w9c.onrender.com";
 
 const emailText = document.getElementById("email-text");
 const analyzeTextBtn = document.getElementById("analyze-text-btn");
