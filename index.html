@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Email Classifier – AutoU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <div class="logo">
+          <span class="logo-badge">AI</span>
+          <span class="logo-text">Email Classifier</span>
+        </div>
+        <div class="header-right">
+          <span class="env-tag"
+            >Backend:
+            <span id="backend-url-label">http://127.0.0.1:8000</span>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <section class="panel panel-input">
+          <div class="panel-header">
+            <h2>Analisar e responder emails</h2>
+            <p>
+              Envie o conteúdo de um email ou um arquivo .txt/.pdf para
+              classificar e gerar uma resposta automática.
+            </p>
+          </div>
+
+          <div class="tabs">
+            <button class="tab-button active" data-tab="text-mode">
+              Texto
+            </button>
+            <button class="tab-button" data-tab="file-mode">Arquivo</button>
+          </div>
+
+          <div class="tab-content active" id="text-mode">
+            <label for="email-text" class="field-label"
+              >Conteúdo do email</label
+            >
+            <textarea
+              id="email-text"
+              class="textarea"
+              rows="8"
+              placeholder="Cole aqui o texto do email que você deseja analisar..."
+            ></textarea>
+
+            <div class="actions">
+              <button id="analyze-text-btn" class="btn primary">
+                Analisar texto
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" id="file-mode">
+            <label for="email-file" class="field-label"
+              >Arquivo de email (.txt ou .pdf)</label
+            >
+            <div class="file-input-wrapper">
+              <input type="file" id="email-file" accept=".txt,.pdf" />
+            </div>
+
+            <p class="hint">
+              O sistema irá extrair o texto do arquivo, classificar o email e
+              sugerir uma resposta.
+            </p>
+
+            <div class="actions">
+              <button id="analyze-file-btn" class="btn primary">
+                Analisar arquivo
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel-output">
+          <div class="panel-header">
+            <h2>Resultado da análise</h2>
+            <p>
+              Categoria detectada e resposta automática sugerida pelo sistema.
+            </p>
+          </div>
+
+          <div id="status-area" class="status-area hidden"></div>
+
+          <div class="result-card">
+            <div class="result-header">
+              <span class="result-label">Categoria</span>
+              <span id="result-category" class="category-badge category-empty"
+                >Aguardando análise...</span
+              >
+            </div>
+
+            <div class="result-body">
+              <label class="field-label">Resposta sugerida</label>
+              <div id="result-response" class="response-box">
+                Nenhuma análise realizada ainda. Envie um texto ou arquivo para
+                começar.
+              </div>
+            </div>
+          </div>
+
+          <div class="result-meta">
+            <span id="result-time" class="meta-item"></span>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
